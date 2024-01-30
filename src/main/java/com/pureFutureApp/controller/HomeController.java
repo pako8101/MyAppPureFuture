@@ -40,4 +40,10 @@ public class HomeController {
 
         return modelAndView;
     }
+
+    @GetMapping("/about")
+    public String about() {
+        return "about";
+    }
+
 }

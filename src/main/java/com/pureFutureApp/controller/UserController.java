@@ -14,7 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.validation.Valid;
 
 @Controller
-public class UserController {
+public class    UserController {
 
     private final UserService userService;
     private final LoggedUser loggedUser;
@@ -45,7 +45,7 @@ public class UserController {
         boolean hasErrors = bindingResult.hasErrors();
 
         if (hasErrors) {
-
+return  new ModelAndView("login");
         }
 
         boolean isLogged = userService.login(userLoginBindingModel);
