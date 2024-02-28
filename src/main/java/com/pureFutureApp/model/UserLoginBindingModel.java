@@ -10,6 +10,9 @@ public class UserLoginBindingModel {
     @Length(min = 3, max = 20)
     private String password;
 
+    public UserLoginBindingModel() {
+    }
+
     public String getUsername() {
         return username;
     }

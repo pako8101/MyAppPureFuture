@@ -5,10 +5,11 @@
 <body>
 <header th:replace="fragments/commons::nav"></header>
 <main>
-    <h1 class="text-center mt-2"><span class="badge badge-pill badge-dark">Register</span></h1>
+    <h1 class="text-center mt-2"><strong class="badge badge-pill badge-dark">
+        Register</strong></h1>
     <hr class="hr-3 w-25 bg-white"/>
 
-    <form class="mx-auto w-25 bg-blur rounded" th:method="POST" th:action="@{/register}">
+    <form th:action="@{/register}"  th:method="POST"  class="mx-auto w-25 bg-blur rounded"  >
 
         <div class="form-group">
             <div class="label-holder textCol d-flex justify-content-center">
@@ -20,7 +21,7 @@
             <!--               id="username" name="username"/>-->
             <!--        <small class="invalid-feedback text-danger">Username error message</small>-->
 
-            <input type="text" class="form-control" id="username" name="username"/>
+            <input th:errorclass="bg-danger" type="text" class="form-control" id="username" name="username"/>
             <small class="text-danger">Username error message</small>
         </div>
 
