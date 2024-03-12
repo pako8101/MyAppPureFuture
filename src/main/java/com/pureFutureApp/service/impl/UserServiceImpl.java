@@ -6,6 +6,7 @@ import com.pureFutureApp.model.entity.User;
 import com.pureFutureApp.repository.UserRepository;
 import com.pureFutureApp.service.LoggedUser;
 import com.pureFutureApp.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +17,7 @@ public class UserServiceImpl implements UserService {
     private final LoggedUser loggedUser;
     private final PasswordEncoder passwordEncoder;
 
+    @Autowired
     public UserServiceImpl(UserRepository userRepository, LoggedUser loggedUser, PasswordEncoder passwordEncoder) {
         this.userRepository = userRepository;
         this.loggedUser = loggedUser;
@@ -38,7 +40,7 @@ public class UserServiceImpl implements UserService {
         user.setPassword(passwordEncoder.encode(userRegisterBindingModel.getPassword()));
         user.setEmail(userRegisterBindingModel.getEmail());
 
-        this.userRepository.save(user);
+        this.userRepository.saveAndFlush(user);
 
         return true;
     }

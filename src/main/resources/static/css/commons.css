@@ -1,0 +1,10 @@
+.navbar{
+    background-color: rosybrown;
+    border: solid 0.1rem darkslategrey;
+}
+.phone{
+    display: flex;
+color: lightslategray;
+    margin: 0.1rem 1em 0 5rem; ;
+
+}

@@ -2,14 +2,18 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
 <head th:replace="fragments/commons::head"></head>
-<body>
 <header th:replace="fragments/commons::nav"></header>
+<body>
+
 <main>
     <h1 class="text-center mt-2"><strong class="badge badge-pill badge-dark">
         Register</strong></h1>
     <hr class="hr-3 w-25 bg-white"/>
-
-    <form th:action="@{/register}"  th:method="POST"  class="mx-auto w-25 bg-blur rounded"  >
+    <div class="row g-3">
+    <form
+          th:action="@{/register}"
+          th:method="POST"
+          class="mx-auto w-25 bg-blur rounded"  >
 
         <div class="form-group">
             <div class="label-holder textCol d-flex justify-content-center">
@@ -17,11 +21,11 @@
             </div>
 
             <!--        Example: Render errors messages with th:errorclass "is-invalid" and class "invalid-feedback" - you can make it differently. -->
-            <!--        <input th:field="*{username}" th:errorclass="'is-invalid alert-danger'" type="text" class="form-control"-->
-            <!--               id="username" name="username"/>-->
-            <!--        <small class="invalid-feedback text-danger">Username error message</small>-->
-
-            <input th:errorclass="bg-danger" type="text" class="form-control" id="username" name="username"/>
+<!--                    <input th:field="*{username}" th:errorclass="'is-invalid alert-danger'" type="text" class="form-control"-->
+<!--                           id="username" name="username"/>-->
+<!--                    <small class="invalid-feedback text-danger">Username error message</small>-->
+<!--            th:errorclass="bg-danger"-->
+            <input  type="text" class="form-control" id="username" name="username"/>
             <small class="text-danger">Username error message</small>
         </div>
 
@@ -52,8 +56,8 @@
         <div class="button-holder d-flex justify-content-center">
             <button type="submit" class="btn btn-warning  mb-3" value="Register">Register</button>
         </div>
-
     </form>
+        </div>
 </main>
 <footer th:replace="fragments/commons::footer"></footer>
 </body>
